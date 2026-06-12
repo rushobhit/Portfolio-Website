@@ -92,7 +92,7 @@ export default function App() {
       <section className="hero">
         <div className="hero-row">
           <aside className="hero-card" aria-label="Profile image tile">
-            <img src="./Shobhit.jpeg" alt="Portrait of Shobhit Awasthi" />
+            <img src="/Shobhit.jpeg" alt="Portrait of Shobhit Awasthi" />
           </aside>
 
           <div className="hero-copy">
