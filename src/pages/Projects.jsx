@@ -1,33 +1,49 @@
 const featuredProject = {
-  id: 'shopping-bandhu',
-  title: 'Shopping Bandhu',
-  category: 'IoT · Product Development',
-  period: 'Team Sigma · 60-hour workshop',
+  id: 'quiz-app',
+  title: 'Quiz App',
+  category: 'Full Stack · Main Project',
+  period: 'React · Spring Boot · PostgreSQL',
   summary:
-    'A self-billing machine concept that combined embedded hardware with a lightweight web experience for cart and billing flow.',
+    'A full-stack quiz platform focused on quiz creation, management, authentication, and smooth participation flow for users and admins.',
   description:
-    'Built during an IoT-based product development workshop, Shopping Bandhu brought hardware and software together into one practical retail idea. The project focused on creating a smoother billing experience by connecting sensing hardware with a simple customer-facing interface.',
+    'This is my primary project and the strongest representation of my full-stack development work. It brings together React on the frontend and Spring Boot on the backend to support quiz workflows, admin management, authentication, and structured data handling in a practical application.',
   highlights: [
-    'Worked with NodeMCU ESP8266, NFC tags, weight sensors, and servo motors.',
-    'Built the web interface using HTML, CSS, and JavaScript.',
-    'Improved teamwork, product thinking, and hands-on IoT problem solving.',
+    'Built full-stack workflow with React frontend and Spring Boot backend.',
+    'Worked on quiz management, admin flow, authentication, and API integration.',
+    'Focused on scalable structure, clean UI flow, and real application usability.',
   ],
-  stack: ['IoT', 'ESP8266', 'NFC', 'Arduino IDE', 'HTML', 'CSS', 'JavaScript'],
+  stack: ['React', 'Spring Boot', 'Java', 'PostgreSQL', 'REST API', 'JWT'],
 }
 
 const projects = [
   {
-    id: 'warehouse',
+    id: 'data-warehouse',
     title: 'Cycle Company Warehouse Dashboard',
-    category: 'Data · Analytics',
+    category: 'Data Warehouse · Main Project',
     summary:
       'Designed a warehousing-oriented data model and built reporting views for business analysis.',
     description:
-      'Worked on SQL, RDBMS concepts, galaxy schema modeling, and Power BI dashboards for a cycle company use case.',
+      'This is my second major project, centered on data warehousing concepts, schema design, SQL analysis, and dashboard-based reporting for a cycle company use case.',
     stack: ['SQL', 'RDBMS', 'Galaxy Schema', 'Power BI', 'Data Warehousing'],
     highlights: [
-      'Modeled warehouse-friendly data structure.',
-      'Built dashboards for business reporting.',
+      'Modeled warehouse-friendly data structure for analysis.',
+      'Worked on schema design and reporting-oriented business views.',
+      'Built dashboards for decision-support and business reporting.',
+    ],
+  },
+  {
+    id: 'shopping-bandhu',
+    title: 'Shopping Bandhu',
+    category: 'IoT · Product Development',
+    summary:
+      'A self-billing machine concept that combined embedded hardware with a lightweight web experience for cart and billing flow.',
+    description:
+      'Built during an IoT-based product development workshop, Shopping Bandhu brought hardware and software together into one practical retail idea. The project focused on creating a smoother billing experience by connecting sensing hardware with a simple customer-facing interface.',
+    stack: ['IoT', 'ESP8266', 'NFC', 'Arduino IDE', 'HTML', 'CSS', 'JavaScript'],
+    highlights: [
+      'Worked with NodeMCU ESP8266, NFC tags, weight sensors, and servo motors.',
+      'Built the web interface using HTML, CSS, and JavaScript.',
+      'Improved teamwork, product thinking, and hands-on IoT problem solving.',
     ],
   },
   {
@@ -42,20 +58,6 @@ const projects = [
     highlights: [
       'Connected frontend and backend flow.',
       'Focused on practical CRUD-style application structure.',
-    ],
-  },
-  {
-    id: 'quiz-microservice',
-    title: 'Quiz Microservice',
-    category: 'Backend · Microservices',
-    summary:
-      'A backend-oriented project exploring service-based quiz functionality.',
-    description:
-      'Built to understand modular backend design and service separation using Java and Spring Boot.',
-    stack: ['Java', 'Spring Boot', 'Microservices', 'REST API'],
-    highlights: [
-      'Explored service-oriented backend logic.',
-      'Improved understanding of modular architecture.',
     ],
   },
   {
@@ -124,8 +126,8 @@ export default function Projects() {
             Projects
           </h1>
           <p className="projects-intro">
-            A selection of work across IoT, data systems, Java backend
-            development, React applications, and frontend builds.
+            A selection of projects centered on full-stack quiz application development,
+            data warehousing, backend architecture, and practical frontend implementation.
           </p>
         </header>
 
@@ -162,20 +164,20 @@ export default function Projects() {
             <div className="project-feature-orb project-feature-orb-b" />
             <div className="project-feature-grid">
               <div className="mini-panel large">
-                <span>Concept</span>
-                <strong>Self-Billing Machine</strong>
-              </div>
-              <div className="mini-panel">
-                <span>Hardware</span>
-                <strong>ESP8266 + Sensors</strong>
+                <span>Main Project</span>
+                <strong>Quiz Platform</strong>
               </div>
               <div className="mini-panel">
                 <span>Frontend</span>
-                <strong>HTML · CSS · JS</strong>
+                <strong>React</strong>
+              </div>
+              <div className="mini-panel">
+                <span>Backend</span>
+                <strong>Spring Boot</strong>
               </div>
               <div className="mini-panel wide">
                 <span>Focus</span>
-                <strong>IoT integration with customer billing flow</strong>
+                <strong>Quiz management, admin flow, APIs, and authentication</strong>
               </div>
             </div>
           </div>
@@ -186,7 +188,7 @@ export default function Projects() {
             <h2 id="more-projects-title">More Builds</h2>
             <p>
               Supporting projects that reflect my range across data, backend,
-              frontend, and programming fundamentals.
+              frontend, IoT, and programming fundamentals.
             </p>
           </div>
 
