@@ -1,2 +1,4 @@
-node_modules 
-dist 
+.vs/
+node_modules/
+dist/
+build/
