@@ -104,18 +104,6 @@ const projects = [
   },
 ]
 
-const ArrowIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path
-      d="M7 17 17 7M9 7h8v8"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-)
 
 export default function Projects() {
   return (
@@ -182,49 +170,14 @@ export default function Projects() {
         </section>
 
         <section className="projects-grid-section" aria-labelledby="more-projects-title">
-          <div className="projects-section-head">
-            <h2 id="more-projects-title">More Builds</h2>
-            <p>
-              Supporting projects that reflect my range across data, backend,
-              frontend, IoT, and programming fundamentals.
-            </p>
-          </div>
+          
 
           <div className="projects-grid">
             {projects.map((project) => (
               <article key={project.id} className="project-card">
                 <div className="project-card-top">
                   <span className="project-eyebrow">{project.category}</span>
-
-                  {project.liveUrl ? (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-icon project-icon-link"
-                      aria-label={`Open ${project.title}`}
-                    >
-                      <ArrowIcon />
-                    </a>
-                  ) : (
-                    <span className="project-icon" aria-hidden="true">
-                      <ArrowIcon />
-                    </span>
-                  )}
                 </div>
-
-                {project.liveUrl ? (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-title-link"
-                  >
-                    <h3 className="project-card-title">{project.title}</h3>
-                  </a>
-                ) : (
-                  <h3 className="project-card-title">{project.title}</h3>
-                )}
 
                 <p className="project-card-summary">{project.summary}</p>
                 <p className="project-card-description">{project.description}</p>
