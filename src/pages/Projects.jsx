@@ -3,6 +3,7 @@ const featuredProject = {
   title: 'Quiz App',
   category: 'Full Stack · Main Project',
   period: 'React · Spring Boot · PostgreSQL',
+  liveUrl: 'https://rushobhit.github.io/quiz-app-frontend/',
   summary:
     'A full-stack quiz platform focused on quiz creation, management, authentication, and smooth participation flow for users and admins.',
   description:
@@ -45,6 +46,7 @@ const projects = [
       'Built the web interface using HTML, CSS, and JavaScript.',
       'Improved teamwork, product thinking, and hands-on IoT problem solving.',
     ],
+    liveUrl: 'https://rushobhit.github.io/shopping-bandhu',
   },
   {
     id: 'expense-tracker',
@@ -59,6 +61,7 @@ const projects = [
       'Connected frontend and backend flow.',
       'Focused on practical CRUD-style application structure.',
     ],
+    liveUrl: 'https://rushobhit.github.io/expense-tracker',
   },
   {
     id: 'netflix-clone',
@@ -73,6 +76,7 @@ const projects = [
       'Practiced responsive frontend implementation.',
       'Focused on clean recreation of a familiar interface.',
     ],
+    liveUrl: 'https://rushobhit.github.io/netflix-clone',
   },
   {
     id: 'snake-game',
@@ -87,6 +91,7 @@ const projects = [
       'Improved event-driven thinking.',
       'Strengthened logic implementation skills.',
     ],
+    liveUrl: 'https://rushobhit.github.io/snake-game-frontend',
   },
   {
     id: 'cpp-dsa',
@@ -101,6 +106,7 @@ const projects = [
       'Built strong problem-solving habits.',
       'Improved algorithmic thinking through regular practice.',
     ],
+    liveUrl: 'https://www.geeksforgeeks.org/profile/rushobhit?tab=activity',
   },
 ]
 
@@ -134,9 +140,24 @@ export default function Projects() {
         <section className="project-feature" aria-labelledby="featured-project-title">
           <div className="project-feature-copy">
             <span className="project-eyebrow">{featuredProject.category}</span>
-            <h2 id="featured-project-title" className="project-feature-title">
-              {featuredProject.title}
-            </h2>
+
+            {featuredProject.liveUrl ? (
+              <a
+                href={featuredProject.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-title-link"
+              >
+                <h2 id="featured-project-title" className="project-feature-title">
+                  {featuredProject.title}
+                </h2>
+              </a>
+            ) : (
+              <h2 id="featured-project-title" className="project-feature-title">
+                {featuredProject.title}
+              </h2>
+            )}
+
             <div className="project-meta">{featuredProject.period}</div>
             <p className="project-feature-summary">{featuredProject.summary}</p>
             <p className="project-feature-description">{featuredProject.description}</p>
@@ -197,12 +218,37 @@ export default function Projects() {
               <article key={project.id} className="project-card">
                 <div className="project-card-top">
                   <span className="project-eyebrow">{project.category}</span>
-                  <span className="project-icon" aria-hidden="true">
-                    <ArrowIcon />
-                  </span>
+
+                  {project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-icon project-icon-link"
+                      aria-label={`Open ${project.title}`}
+                    >
+                      <ArrowIcon />
+                    </a>
+                  ) : (
+                    <span className="project-icon" aria-hidden="true">
+                      <ArrowIcon />
+                    </span>
+                  )}
                 </div>
 
-                <h3 className="project-card-title">{project.title}</h3>
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-title-link"
+                  >
+                    <h3 className="project-card-title">{project.title}</h3>
+                  </a>
+                ) : (
+                  <h3 className="project-card-title">{project.title}</h3>
+                )}
+
                 <p className="project-card-summary">{project.summary}</p>
                 <p className="project-card-description">{project.description}</p>
 
