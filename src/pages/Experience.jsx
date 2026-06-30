@@ -279,143 +279,12 @@ export default function Experience() {
                 role="region"
                 aria-labelledby={`exp-trigger-${activeNode.id}`}
               >
-                {activeIndex === 0 && (
-                  <>
-                    <section className="experience-panel experience-panel-expanded">
-                      <div className="experience-panel-inner">
-                        <div className="experience-panel-meta">
-                          <h3>{activeNode.company}</h3>
-                          <span>{activeNode.duration}</span>
-                        </div>
-
-                        <p>{activeNode.description}</p>
-
-                        <div className="experience-skill-list">
-                          {activeNode.skills.map((skill) => (
-                            <span key={skill} className="experience-skill-chip">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </section>
-
-                    <aside className="experience-side-panel side-panel-right">
-                      <div className="experience-side-panel-inner">
-                        {activeNode.assets?.map((asset, index) => (
-                          <AssetCard key={`${asset.label}-${index}`} asset={asset} index={index} />
-                        ))}
-                      </div>
-                    </aside>
-                  </>
-                )}
-
-                {activeIndex === 1 && (
-                  <>
-                    <section className="experience-panel experience-panel-expanded">
-                      <div className="experience-panel-inner">
-                        <div className="experience-panel-meta">
-                          <h3>{activeNode.company}</h3>
-                          <span>{activeNode.duration}</span>
-                        </div>
-
-                        <p>{activeNode.description}</p>
-
-                        <div className="experience-skill-list">
-                          {activeNode.skills.map((skill) => (
-                            <span key={skill} className="experience-skill-chip">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </section>
-
-                    <aside className="experience-side-panel side-panel-right">
-                      <div className="experience-side-panel-inner">
-                        {activeNode.assets?.map((asset, index) => (
-                          <AssetCard key={`${asset.label}-${index}`} asset={asset} index={index} />
-                        ))}
-                      </div>
-                    </aside>
-                  </>
-                )}
-
-                {activeIndex === 2 && (
-                  <>
-                    {firstAsset && (
-                      <aside className="experience-side-panel side-panel-left">
-                        <div className="experience-side-panel-inner">
-                          <AssetCard key={`${firstAsset.label}-left`} asset={firstAsset} index={0} />
-                        </div>
-                      </aside>
-                    )}
-
-                    <section className="experience-panel experience-panel-expanded">
-                      <div className="experience-panel-inner">
-                        <div className="experience-panel-meta">
-                          <h3>{activeNode.company}</h3>
-                          <span>{activeNode.duration}</span>
-                        </div>
-
-                        <p>{activeNode.description}</p>
-
-                        <div className="experience-skill-list">
-                          {activeNode.skills.map((skill) => (
-                            <span key={skill} className="experience-skill-chip">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </section>
-
-                    {secondAsset && (
-                      <aside className="experience-side-panel side-panel-right">
-                        <div className="experience-side-panel-inner">
-                          <AssetCard key={`${secondAsset.label}-right`} asset={secondAsset} index={0} />
-                        </div>
-                      </aside>
-                    )}
-                  </>
-                )}
-
-                {activeIndex === 3 && (
-                  <>
-                    <aside className="experience-side-panel side-panel-left">
-                      <div className="experience-side-panel-inner">
-                        {activeNode.assets?.map((asset, index) => (
-                          <AssetCard key={`${asset.label}-left-${index}`} asset={asset} index={index} />
-                        ))}
-                      </div>
-                    </aside>
-
-                    <section className="experience-panel experience-panel-expanded">
-                      <div className="experience-panel-inner">
-                        <div className="experience-panel-meta">
-                          <h3>{activeNode.company}</h3>
-                          <span>{activeNode.duration}</span>
-                        </div>
-
-                        <p>{activeNode.description}</p>
-
-                        <div className="experience-skill-list">
-                          {activeNode.skills.map((skill) => (
-                            <span key={skill} className="experience-skill-chip">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </section>
-                  </>
-                )}
-
-                {activeIndex === 4 && (
-                  <>
-                    <aside className="experience-side-panel side-panel-left">
-                      <div className="experience-side-panel-inner">
-                        {activeNode.socials?.map((social, index) => (
+                {/* Left Side Panel */}
+                {(activeIndex === 2 || activeIndex === 3 || activeIndex === 4) && (
+                  <aside className="experience-side-panel side-panel-left">
+                    <div className="experience-side-panel-inner">
+                      {activeIndex === 4 ? (
+                        activeNode.socials?.map((social, idx) => (
                           <a
                             key={social.label}
                             href={social.href}
@@ -423,36 +292,60 @@ export default function Experience() {
                             rel="noopener noreferrer"
                             className="experience-social-node"
                             aria-label={social.label}
-                            style={{ '--asset-delay': `${index * 90}ms` }}
+                            style={{ '--asset-delay': `${idx * 90}ms` }}
                           >
                             <span className="experience-social-icon" aria-hidden="true">
                               <SocialIcon type={social.icon} />
                             </span>
                             <span className="experience-asset-label">{social.label}</span>
                           </a>
-                        ))}
-                      </div>
-                    </aside>
+                        ))
+                      ) : (
+                        activeIndex === 2 ? (
+                          firstAsset && <AssetCard asset={firstAsset} index={0} />
+                        ) : (
+                          activeNode.assets?.map((asset, idx) => (
+                            <AssetCard key={`${asset.label}-${idx}`} asset={asset} index={idx} />
+                          ))
+                        )
+                      )}
+                    </div>
+                  </aside>
+                )}
 
-                    <section className="experience-panel experience-panel-expanded">
-                      <div className="experience-panel-inner">
-                        <div className="experience-panel-meta">
-                          <h3>{activeNode.company}</h3>
-                          <span>{activeNode.duration}</span>
-                        </div>
+                {/* Core Panel Content */}
+                <section className="experience-panel experience-panel-expanded">
+                  <div className="experience-panel-inner">
+                    <div className="experience-panel-meta">
+                      <h3>{activeNode.company}</h3>
+                      <span>{activeNode.duration}</span>
+                    </div>
 
-                        <p>{activeNode.description}</p>
+                    <p>{activeNode.description}</p>
 
-                        <div className="experience-skill-list">
-                          {activeNode.skills.map((skill) => (
-                            <span key={skill} className="experience-skill-chip">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </section>
-                  </>
+                    <div className="experience-skill-list">
+                      {activeNode.skills.map((skill) => (
+                        <span key={skill} className="experience-skill-chip">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+
+                {/* Right Side Panel */}
+                {(activeIndex === 0 || activeIndex === 1 || activeIndex === 2) && (
+                  <aside className="experience-side-panel side-panel-right">
+                    <div className="experience-side-panel-inner">
+                      {activeIndex === 2 ? (
+                        secondAsset && <AssetCard asset={secondAsset} index={0} />
+                      ) : (
+                        activeNode.assets?.map((asset, idx) => (
+                          <AssetCard key={`${asset.label}-${idx}`} asset={asset} index={idx} />
+                        ))
+                      )}
+                    </div>
+                  </aside>
                 )}
               </div>
             )}

@@ -6,7 +6,7 @@ const educationList = [
     year: 'Pursuing',
     score: '8.5',
     description: 'Currently pursuing MCA to strengthen advanced technical knowledge.',
-    marksheet: `${import.meta.env.BASE_URL}Marksheets/pg.jpg`,
+    marksheet: `${import.meta.env.BASE_URL}Marksheets/7th_sem.pdf`,
     marksheetType: 'pdf',
     order: 4,
   },
@@ -43,10 +43,10 @@ const educationList = [
     marksheetType: 'pdf',
     order: 1,
   },
-]
+];
 
 export default function Education() {
-  const sortedEducationList = [...educationList].sort((a, b) => b.order - a.order)
+  const sortedEducationList = [...educationList].sort((a, b) => b.order - a.order);
 
   return (
     <main className="education-page">
@@ -65,6 +65,7 @@ export default function Education() {
               href={item.marksheet}
               target="_blank"
               rel="noopener noreferrer"
+              style={{ overflow: 'hidden', display: 'block', height: '260px' }}
             >
               {item.marksheetType === 'pdf' ? (
                 <object
@@ -72,6 +73,7 @@ export default function Education() {
                   type="application/pdf"
                   className="marksheet-pdf-frame"
                   aria-label={`${item.level} marksheet`}
+                  style={{ width: '100%', height: '100%', border: 'none' }}
                 >
                   <div className="marksheet-fallback">
                     <span>PDF</span>
@@ -113,5 +115,5 @@ export default function Education() {
         ))}
       </section>
     </main>
-  )
+  );
 }
